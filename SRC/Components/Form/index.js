@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import { flushSync } from "react-dom";
 import{ View,Text, TextInput,Button} from "react-native";
 
 export default function Form(){
@@ -8,6 +9,10 @@ export default function Form(){
     const[imc,setImc] =useState(null)
     const[textButton,setTextButton] =useState("Calcular IMC")
 
+
+    function imcCalculator(){
+        return setImc((weight/(heigt*heigt)).toFixed(2))
+    }
 
 
     return( 
